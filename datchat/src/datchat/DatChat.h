@@ -1,7 +1,9 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+
 #include "ui_DatChat.h"
+#include "User.h"
 
 namespace dat
 {
@@ -11,9 +13,11 @@ namespace dat
 
     public:
         DatChat(QWidget* parent = nullptr);
-        ~DatChat();
 
     private:
-        Ui::DatChatClass ui;
+        User m_User = User({ "Default User", QColor(0, 0, 0) });
+
+    private:
+        ::Ui::DatChatClass ui;
     };
 }
